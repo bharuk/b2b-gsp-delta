@@ -36,3 +36,17 @@ jobs:
     runs-on: ubuntu-latest
     env:
      DEPLOY_STAGE: staging
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Deploy to Production
+        run: npm run deploy:production
