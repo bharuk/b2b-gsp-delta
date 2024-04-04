@@ -22,13 +22,13 @@ jobs:
         echo "🔎 The name of the your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
     - run: |
         ls ${{github.workspace}}
-    - name: Check out repository code
+    - name: Checkout repository code
       uses: actions/checkout@v1
     - name: Install NPM
-    - run: |
-          npm install
+      run: |
+        npm install
       # Install the SFDX CLI using npm command
     - name: Install the SFDX CLI
-    - run: |
+      run: |
         npm install sfdx-cli --global
         sfdx force --help
