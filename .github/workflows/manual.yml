@@ -8,7 +8,7 @@ on:
 
 # Later, in the jobs section of your manual.yml file.
 jobs:
-  if_merged:
+  CI_JOBS:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
