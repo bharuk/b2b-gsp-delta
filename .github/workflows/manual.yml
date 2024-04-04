@@ -20,10 +20,10 @@ jobs:
         echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
     - run: |
         echo "🔎 The name of the your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+    - run: |
+        ls ${{github.workspace}}
     - name: Check out repository code
       uses: actions/checkout@v1
-    - run: |
-        ls ${{github.workspace}}  
     - name: Install NPM
     - run: |
           npm install
