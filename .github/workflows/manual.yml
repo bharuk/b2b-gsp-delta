@@ -6,7 +6,7 @@ on:
     types:
       - closed
 
-# Later, in the jobs section of your actions.yml file.
+# Later, in the jobs section of your manual.yml file.
 jobs:
   if_merged:
     if: github.event.pull_request.merged == true
@@ -22,3 +22,18 @@ jobs:
         echo "🔎 The name of the your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
     - name: Check out repository code
       uses: actions/checkout@v1
+    - run: |
+        ls ${{github.workspace}}
+
+    - name: Checkout the Source code from the latest commit
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  
+    - name: Install NPM
+    - run: |
+          npm install
+      # Install the SFDX CLI using npm command
+    - name: Install the SFDX CLI
+    -  run: |
+          npm install sfdx-cli --global
+          sfdx force --help
