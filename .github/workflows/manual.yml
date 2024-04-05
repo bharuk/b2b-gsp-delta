@@ -45,5 +45,3 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Deploy to Production
-        run: npm run deploy:production
